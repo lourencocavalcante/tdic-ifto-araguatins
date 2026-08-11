@@ -37,7 +37,6 @@
 
   qsa('.copy-btn').forEach(btn=>btn.addEventListener('click',async()=>{const code=btn.closest('.example-cell').querySelector('code').innerText; try{await navigator.clipboard.writeText(code);btn.textContent='Copiado';setTimeout(()=>btn.textContent='Copiar',1400)}catch{btn.textContent='Selecione e copie';}}));
 
-  // Modo de destaque por seleção de texto
   const action=qs('#selectionAction'), dialog=qs('#focusDialog'), focusContent=qs('#focusContent'); let selected=''; let fontSize=Number(localStorage.getItem('tdicFocusFont')||32);
   function hideAction(){action.hidden=true;}
   document.addEventListener('selectionchange',()=>{const sel=getSelection(); if(!sel || sel.isCollapsed || dialog.open){hideAction();return;} const text=sel.toString().trim(); if(text.length<3){hideAction();return;} const range=sel.getRangeAt(0); const node=range.commonAncestorContainer.nodeType===1?range.commonAncestorContainer:range.commonAncestorContainer.parentElement; if(!qs('main')?.contains(node)){hideAction();return;} selected=text; const r=range.getBoundingClientRect(); action.style.left=Math.max(8,Math.min(innerWidth-180,r.left+r.width/2-75))+'px'; action.style.top=Math.max(76,r.bottom+8)+'px'; action.hidden=false;});

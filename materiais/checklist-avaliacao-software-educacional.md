@@ -21,3 +21,9 @@ Use evidências. Não marque um critério apenas pela impressão geral da interf
 - Critérios eliminatórios atendidos?
 - Recomendação:
 - Alternativa de contingência:
+
+## Uso de IA na atividade
+
+A IA pode apoiar a formulação de critérios ou perguntas de teste, mas não substitui a avaliação prática do produto. Toda conclusão deve ser sustentada por observação direta, teste, documentação oficial ou fonte verificável.
+
+Se houver uso de IA, registre a ferramenta, a finalidade e o que foi efetivamente verificado. Funcionalidades inexistentes, referências inventadas ou conclusões não testadas comprometem os critérios de evidência, fundamentação e autoria.

@@ -27,3 +27,12 @@ Qual aspecto deve ser enfrentado primeiro e por quê?
 
 ## 6. Critério de sucesso
 Que mudança observável indicará que a solução ajudou?
+
+## 7. Registro de autoria e uso de IA
+
+- O diagnóstico inicial foi elaborado a partir de observação, registros ou cenário fornecido? 
+- Houve uso de IA? Se sim, em qual etapa e com qual finalidade?
+- O que foi mantido, alterado ou rejeitado após o uso da ferramenta?
+- Como as informações foram verificadas?
+
+**Atenção:** não envie para ferramentas externas nomes de estudantes, dados pessoais, registros acadêmicos, avaliações individuais ou informações institucionais sensíveis.
