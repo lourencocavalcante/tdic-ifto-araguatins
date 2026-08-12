@@ -59,7 +59,7 @@
     if(!panel)return;
     panel.hidden=false;
     btn.setAttribute('aria-expanded','true');
-    btn.textContent='Ocultar resposta';
+    btn.textContent='Ocultar resposta comentada';
     requestAnimationFrame(()=>panel.focus({preventScroll:true}));
     panel.scrollIntoView({behavior:body.classList.contains('no-motion')||body.classList.contains('motion-paused')?'auto':'smooth',block:'nearest'});
   }
@@ -70,7 +70,7 @@
     if(!panel)return;
     panel.hidden=true;
     btn.setAttribute('aria-expanded','false');
-    btn.textContent='Ver resposta';
+    btn.textContent='Ver resposta comentada';
     btn.focus();
   }
 
@@ -81,7 +81,7 @@
     if(!panel.hidden){hideAnswer(btn);return;}
     pendingAnswerButton=btn;
     if(answerDialog?.showModal)answerDialog.showModal();
-    else if(window.confirm('Faça primeiro a sua tentativa. Deseja consultar a resposta de referência mesmo assim?'))revealAnswer(btn);
+    else if(window.confirm('Faça primeiro a sua tentativa. A resposta comentada é apenas uma referência de aprendizagem, não um gabarito. Deseja consultá-la mesmo assim?'))revealAnswer(btn);
   }));
 
   answerConfirm?.addEventListener('click',()=>{

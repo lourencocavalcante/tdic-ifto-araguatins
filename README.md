@@ -50,8 +50,8 @@ O projeto é estático e não depende de servidor, banco de dados, processo de c
 - atalhos `+`, `-`, `F` e `Esc` no modo de destaque;
 - persistência do tamanho do texto no navegador;
 - navegação por teclado e estilos de `focus-visible`;
-- respostas comentadas nas práticas, acessadas pelo botão **Ver resposta**;
-- aviso obrigatório antes da abertura de cada resposta, orientando o estudante a realizar primeiro sua própria tentativa.
+- respostas comentadas nas práticas, acessadas pelo botão **Ver resposta comentada**;
+- aviso obrigatório antes da abertura de cada resposta, orientando o estudante a realizar primeiro sua própria tentativa e esclarecendo que a resposta é referência de aprendizagem, não gabarito.
 
 ## Publicação no GitHub Pages
 
