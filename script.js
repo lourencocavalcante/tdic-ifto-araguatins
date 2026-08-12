@@ -49,4 +49,48 @@
   qs('[data-font="reset"]')?.addEventListener('click',()=>{fontSize=32;applyFont()});
   qs('[data-fullscreen]')?.addEventListener('click',()=>{if(!document.fullscreenElement)dialog.requestFullscreen?.();else document.exitFullscreen?.();});
   document.addEventListener('keydown',e=>{if(!dialog.open)return; if(e.key==='+'||e.key==='='){e.preventDefault();fontSize=Math.min(72,fontSize+4);applyFont()} if(e.key==='-'){e.preventDefault();fontSize=Math.max(18,fontSize-4);applyFont()} if(e.key.toLowerCase()==='f'){e.preventDefault();if(!document.fullscreenElement)dialog.requestFullscreen?.();else document.exitFullscreen?.();}});
+
+  const answerDialog=qs('#answerWarningDialog'), answerConfirm=qs('#answerConfirm');
+  let pendingAnswerButton=null;
+
+  function revealAnswer(btn){
+    const targetId=btn?.dataset.answerTarget;
+    const panel=targetId?document.getElementById(targetId):null;
+    if(!panel)return;
+    panel.hidden=false;
+    btn.setAttribute('aria-expanded','true');
+    btn.textContent='Ocultar resposta';
+    requestAnimationFrame(()=>panel.focus({preventScroll:true}));
+    panel.scrollIntoView({behavior:body.classList.contains('no-motion')||body.classList.contains('motion-paused')?'auto':'smooth',block:'nearest'});
+  }
+
+  function hideAnswer(btn){
+    const targetId=btn?.dataset.answerTarget;
+    const panel=targetId?document.getElementById(targetId):null;
+    if(!panel)return;
+    panel.hidden=true;
+    btn.setAttribute('aria-expanded','false');
+    btn.textContent='Ver resposta';
+    btn.focus();
+  }
+
+  qsa('.answer-toggle').forEach(btn=>btn.addEventListener('click',()=>{
+    const targetId=btn.dataset.answerTarget;
+    const panel=targetId?document.getElementById(targetId):null;
+    if(!panel)return;
+    if(!panel.hidden){hideAnswer(btn);return;}
+    pendingAnswerButton=btn;
+    if(answerDialog?.showModal)answerDialog.showModal();
+    else if(window.confirm('Faça primeiro a sua tentativa. Deseja consultar a resposta de referência mesmo assim?'))revealAnswer(btn);
+  }));
+
+  answerConfirm?.addEventListener('click',()=>{
+    if(pendingAnswerButton)revealAnswer(pendingAnswerButton);
+    pendingAnswerButton=null;
+  });
+
+  answerDialog?.addEventListener('close',()=>{
+    if(answerDialog.returnValue!=='confirm')pendingAnswerButton=null;
+  });
+
 })();

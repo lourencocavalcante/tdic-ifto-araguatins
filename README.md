@@ -30,7 +30,8 @@ TDIC integra o conjunto de disciplinas eletivas. A matriz curricular prevê Elet
     ├── checklist-avaliacao-software-educacional.md
     ├── template-plano-atividade-tdic.md
     ├── rubrica-projeto-final.md
-    └── guia-hipermidia-educacional.md
+    ├── guia-hipermidia-educacional.md
+    └── orientacoes-uso-ia-atividades.md
 ```
 
 O projeto é estático e não depende de servidor, banco de dados, processo de compilação ou bibliotecas externas.
@@ -48,7 +49,9 @@ O projeto é estático e não depende de servidor, banco de dados, processo de c
 - seleção de texto com destaque ampliado para projeção;
 - atalhos `+`, `-`, `F` e `Esc` no modo de destaque;
 - persistência do tamanho do texto no navegador;
-- navegação por teclado e estilos de `focus-visible`.
+- navegação por teclado e estilos de `focus-visible`;
+- respostas comentadas nas práticas, acessadas pelo botão **Ver resposta**;
+- aviso obrigatório antes da abertura de cada resposta, orientando o estudante a realizar primeiro sua própria tentativa.
 
 ## Publicação no GitHub Pages
 

@@ -11,3 +11,210 @@
 .integrity-cards .card h3{
   margin-bottom:.5rem;
 }
+
+
+.answer-actions{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px 14px;
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid #b7d9c0;
+}
+.answer-toggle{
+  appearance:none;
+  border:1px solid #1a7f37;
+  background:#fff;
+  color:#116329;
+  border-radius:7px;
+  padding:.58rem .9rem;
+  font:600 .95rem/1.2 inherit;
+  cursor:pointer;
+}
+.answer-toggle:hover{
+  background:#dafbe1;
+}
+.answer-toggle[aria-expanded="true"]{
+  background:#1a7f37;
+  color:#fff;
+}
+.answer-hint{
+  color:var(--muted);
+  font-size:.88rem;
+}
+.solution-panel{
+  margin-top:16px;
+  padding:18px;
+  border:1px solid #a8c7b0;
+  border-radius:9px;
+  background:#fff;
+  box-shadow:0 6px 18px rgba(31,35,40,.06);
+}
+.solution-panel[hidden]{
+  display:none;
+}
+.solution-panel:focus{
+  outline:3px solid rgba(26,127,55,.18);
+  outline-offset:2px;
+}
+.solution-panel h4{
+  margin:0 0 12px;
+  font-size:1.08rem;
+}
+.solution-intro{
+  margin-top:0;
+  color:#3f4943;
+}
+.solution-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin:14px 0;
+}
+.solution-grid>div{
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:13px 14px;
+  background:#f8faf9;
+}
+.solution-grid p{
+  margin:.35rem 0 0;
+}
+.solution-challenge{
+  margin:16px 0 0;
+  padding:13px 14px;
+  border-left:3px solid #8250df;
+  border-radius:0 7px 7px 0;
+  background:#fbefff;
+}
+.solution-challenge p{
+  margin:.3rem 0 0;
+}
+.solution-note{
+  margin:16px 0 0;
+  padding-top:12px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:.9rem;
+}
+.solution-table-wrap{
+  overflow:auto;
+  margin:14px 0;
+  border:1px solid var(--line);
+  border-radius:8px;
+}
+.solution-table{
+  width:100%;
+  min-width:700px;
+  border-collapse:collapse;
+  font-size:.9rem;
+}
+.solution-table th,
+.solution-table td{
+  padding:9px 10px;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+  vertical-align:top;
+}
+.solution-table th{
+  background:#f6f8fa;
+}
+.solution-table tr:last-child td{
+  border-bottom:0;
+}
+.process-solution{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  overflow:auto;
+  margin:14px 0;
+  padding:4px 0 8px;
+}
+.process-solution>div{
+  min-width:132px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:11px;
+  text-align:center;
+  background:#f8faf9;
+}
+.process-solution small{
+  display:block;
+  margin-top:2px;
+  color:var(--muted);
+}
+.answer-warning-dialog{
+  width:min(620px,92vw);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:0;
+  box-shadow:0 24px 80px rgba(0,0,0,.28);
+}
+.answer-warning-dialog::backdrop{
+  background:rgba(13,17,23,.58);
+}
+.answer-warning-dialog form{
+  padding:22px;
+}
+.answer-warning-head{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+.answer-warning-head h2{
+  margin:.05rem 0 .45rem;
+  font-size:1.55rem;
+}
+.answer-warning-icon{
+  display:grid;
+  place-items:center;
+  flex:0 0 38px;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#fff8c5;
+  border:1px solid #d4a72c;
+  color:#7d4e00;
+  font-weight:800;
+  font-size:1.15rem;
+}
+.answer-warning-callout{
+  margin:16px 0;
+}
+.answer-warning-actions{
+  display:flex;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:18px;
+}
+.answer-warning-actions button{
+  font:inherit;
+  border-radius:7px;
+  padding:.58rem .85rem;
+  cursor:pointer;
+}
+.answer-cancel{
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--text);
+}
+.answer-confirm{
+  border:1px solid #9a6700;
+  background:#fff8c5;
+  color:#5f4200;
+  font-weight:600;
+}
+.answer-cancel:hover{
+  background:var(--panel);
+}
+.answer-confirm:hover{
+  background:#f7e58b;
+}
+@media(max-width:700px){
+  .solution-grid{grid-template-columns:1fr}
+  .answer-actions{align-items:flex-start;flex-direction:column}
+  .answer-warning-actions{flex-direction:column-reverse}
+  .answer-warning-actions button{width:100%}
+}
